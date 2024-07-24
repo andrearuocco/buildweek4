@@ -11,22 +11,7 @@ import { useEffect, useState } from "react"
 
 
 function App() {
-  const [profiles, setProfiles] = useState([])
-  const API_URL = 'https://striveschool-api.herokuapp.com/api/profile/'
-  const token = process.env.REACT_APP_API_STRIVE_LINKEDIN
-      const loadProfile = async () => {
-          const response = await fetch(API_URL,
-              {
-                  headers: {
-                      "Authorization": "Bearer " + token,
-                   
-                  },
-              })
-          const data = await response.json()
-          console.log(data)
-          setProfiles(data.slice(300, 310))
-      }
-  useEffect(()=>{loadProfile()}, [])
+  
   return (
     <>
     <BrowserRouter>
@@ -36,10 +21,10 @@ function App() {
           <Col md={8}>
             <Routes>
               <Route path='/' element={<Me />} /> 
-              <Route path='/people/:id' element={<People profiles={profiles} />} /> 
+              <Route path='/people/:id' element={<People  />} /> 
             </Routes>
           </Col>
-          <Col md={4}><Aside profiles={profiles}/></Col>
+          <Col md={4}><Aside /></Col>
         </Row>
       </Container>
       <MyFooter />

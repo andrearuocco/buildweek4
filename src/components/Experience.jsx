@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
 import { ListGroup, Container } from 'react-bootstrap/';
 
-function Experience({ me }) {
-    const API_URL = `https://striveschool-api.herokuapp.com/api/profile/${me._id}/experiences`
-    const token = process.env.REACT_APP_API_STRIVE_LINKEDIN
+function Experience({ id }) {
     const [experiences, setExperiences] = useState([])
+    const token = process.env.REACT_APP_API_STRIVE_LINKEDIN
     const loadExperience = async () => {
+        const API_URL = `https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`
         const response = await fetch(API_URL,
             {
                 headers: {
@@ -18,7 +18,7 @@ function Experience({ me }) {
         
     }
 
-    useEffect(()=>{loadExperience()}, [])
+    useEffect(()=>{loadExperience()}, [id])
     return(<Container className=''><h4>Esperienze</h4>{experiences.map(experience => 
         <ListGroup>
             <ListGroup.Item>{experience.role}</ListGroup.Item>

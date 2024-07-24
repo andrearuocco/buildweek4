@@ -5,8 +5,8 @@ import { Button, Container, Image } from 'react-bootstrap'
 function Jumbotron({ me }) {
 
     return(<>
-        <Container className='h-ar p-0 bor-and'>
-            <Image src="https://picsum.photos/735/200" className='bor-and-t w-100' />
+        <Container className='p-0 bor-and'>
+            <Image src="https://picsum.photos/735/200" className='h-50 bor-and-t w-100' />
             <div className='position-relative'>
                 <Image src={me.image} className='position-absolute h-img-bw w-img-bw pa-ra' />   </div>
             <div className='d-flex justify-content-between'>

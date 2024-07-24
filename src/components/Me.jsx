@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Jumbotron from "./Jumbotron"
 import Experience from "./Experience"
 
-function Me() {
+function Me({profiles}) {
     const API_URL = 'https://striveschool-api.herokuapp.com/api/profile/me'
     const token = process.env.REACT_APP_API_STRIVE_LINKEDIN
     const [me, setMe] = useState('')
@@ -20,7 +20,7 @@ function Me() {
     useEffect(()=>{loadMe()}, [])
     return (<>
         
-        <Jumbotron key={me._id} me={me}/>
+        <Jumbotron key={me._id} me={me} profiles={profiles}/>
         <Experience key={me._id} me={me}/>
        
     </>);

@@ -1,0 +1,28 @@
+.h-ar {
+    height: 100vh !important;
+}
+
+.w-img-bw {
+    width: 100px;
+}
+
+.h-img-bw {
+    height: 100px;
+}
+
+.bor-and {
+    border-radius: 10px !important;
+    border: 1px solid blue !important;
+}
+
+.bor-and-t {
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    border: 1px solid blue !important;
+}
+
+.pa-ra {
+    top: -5rem;
+    left: 2rem;
+    border-radius: 50%;
+}

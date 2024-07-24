@@ -3,10 +3,10 @@ import { ListGroup, Container, Button , Form} from 'react-bootstrap/';
 
 function Experience({ id }) {
     const [experiences, setExperiences] = useState([])
-    const [form, setForm] = useState(false) //per far vedere il form
+ /*    const [form, setForm] = useState(false) //per far vedere il form
     const openForm = () =>{
         setForm(true)
-    }
+    } */
     const token = process.env.REACT_APP_API_STRIVE_LINKEDIN
     const loadExperience = async () => {
         const API_URL = `https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`
@@ -31,7 +31,7 @@ function Experience({ id }) {
             <ListGroup.Item>{experience.description}</ListGroup.Item>
             <ListGroup.Item>{experience.area}</ListGroup.Item>
         </ListGroup>)}
-   <Button onClick={openForm} className='w-25'variant="primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+ {/*   <Button onClick={openForm} className='w-25'variant="primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
   <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
 </svg></Button>
 {form && <Form>
@@ -53,7 +53,7 @@ function Experience({ id }) {
       <Button variant="primary" type="submit">
         Submit
       </Button>
-    </Form>}
+    </Form>} */}
     </Container>);
 }
 

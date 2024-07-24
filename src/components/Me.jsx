@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Jumbotron from "./Jumbotron"
 import Experience from "./Experience"
+import Add from "./Add"
 
 function Me() {
     const API_URL = 'https://striveschool-api.herokuapp.com/api/profile/me'
@@ -22,6 +23,7 @@ function Me() {
         
         <Jumbotron key={user._id} user={user}/>
         <Experience key={user._id} id={user._id}/>
+        <Add />
        
     </>);
 }

@@ -16,17 +16,20 @@ function App() {
     <>
     <BrowserRouter>
       <MyNav />
-      <Container>
+      <div className='d-flex justify-content-center align-items-center bg-pp'>
+      <Container >
         <Row>
-          <Col md={8}>
+          <Col md={8} >
             <Routes>
               <Route path='/' element={<Me />} /> 
               <Route path='/people/:id' element={<People  />} /> 
             </Routes>
           </Col>
-          <Col md={4}><Aside /></Col>
+          <Col md={4} ><Aside /></Col>
         </Row>
       </Container>
+      
+      </div>
       <MyFooter />
       </BrowserRouter>
 

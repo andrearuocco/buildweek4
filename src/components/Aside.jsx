@@ -3,7 +3,23 @@ import { Image, Button } from 'react-bootstrap/';
 import { Link } from 'react-router-dom';
 import './Aside.css';
 
-function Aside({profiles}) {
+function Aside() {
+const [profiles, setProfiles] = useState([])
+  const API_URL = 'https://striveschool-api.herokuapp.com/api/profile/'
+  const token = process.env.REACT_APP_API_STRIVE_LINKEDIN
+      const loadProfile = async () => {
+          const response = await fetch(API_URL,
+              {
+                  headers: {
+                      "Authorization": "Bearer " + token,
+                   
+                  },
+              })
+          const data = await response.json()
+          console.log(data)
+          setProfiles(data.slice(300, 310))
+      }
+  useEffect(()=>{loadProfile()}, [])
 
     return(
         <>{profiles.map(profile => /*inizioComponent*/<ul className="d-flex list-unstyled">

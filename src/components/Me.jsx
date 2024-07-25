@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import Jumbotron from "./Jumbotron"
+import JumboMe from "./JumboMe"
 import Experience from "./Experience"
 import Add from "./Add"
 
@@ -21,7 +21,7 @@ function Me() {
     useEffect(()=>{loadMe()}, [])
     return (<>
         
-        <Jumbotron key={user._id} user={user}/>
+        <JumboMe key={user._id} user={user} loadMe={loadMe} />
         <Experience key={user._id} id={user._id}/>
         <Add />
        

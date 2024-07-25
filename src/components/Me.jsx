@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import JumboMe from "./JumboMe"
-import Experience from "./Experience"
+import ExperienceMe from "./ExperienceMe"
 import Add from "./Add"
 
 function Me() {
@@ -22,7 +22,7 @@ function Me() {
     return (<>
         
         <JumboMe key={user._id} user={user} loadMe={loadMe} />
-        <Experience key={user._id} id={user._id}/>
+        <ExperienceMe key={user._id} id={user._id}/>
         <Add />
        
     </>);

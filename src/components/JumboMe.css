@@ -1,0 +1,24 @@
+.w-img-bw-me {
+    width: 100px;
+}
+
+.h-img-bw-me {
+    height: 100px;
+}
+
+.bor-and-me {
+    border-radius: 10px !important;
+    border: 1px solid blue !important;
+}
+
+.bor-and-t-me {
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    border: 1px solid blue !important;
+}
+
+.pa-ra-me {
+    top: -5rem;
+    left: 2rem;
+    border-radius: 50%;
+}

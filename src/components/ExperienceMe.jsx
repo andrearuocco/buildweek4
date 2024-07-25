@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import { ListGroup, Container, Button , Form} from 'react-bootstrap/';
 import Group from "./Group";
+import Add from "./Add";
 
-function ExperienceMe({ id }) {
+function ExperienceMe({ id, user }) {
     const [experiences, setExperiences] = useState([])
  /*    const [form, setForm] = useState(false) //per far vedere il form
     const openForm = () =>{
@@ -55,6 +56,7 @@ function ExperienceMe({ id }) {
         Submit
       </Button>
     </Form>} */}
+    <Add key={user._id} id={user._id} loadExperience={loadExperience} />
     </Container>);
 }
 

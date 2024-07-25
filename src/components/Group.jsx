@@ -61,6 +61,7 @@ function Group({experience, loadExperience, id}) {
           if(response.ok){
             loadExperience()
             alert("Cancellato correttamente")
+            closeModal()
           }
          
         

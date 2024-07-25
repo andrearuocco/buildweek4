@@ -22,8 +22,8 @@ function Me() {
     return (<>
         
         <JumboMe key={user._id} user={user} loadMe={loadMe} />
-        <ExperienceMe key={user._id} id={user._id}/>
-        <Add />
+        <ExperienceMe key={user._id} user={user} id={user._id}/>
+        
        
     </>);
 }

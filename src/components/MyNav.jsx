@@ -43,9 +43,9 @@ function MyNav() {
             <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901" />
           </svg></div><div className='d-none d-md-block fontSize'>Notifiche</div></div></Nav.Link>
           {/* <Nav.Link className='pe-5' href="#avatar"><div className='d-flex flex-column'><div className='d-flex justify-content-center '><img className='avatar' src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png' /></div><div className='d-none d-md-block text-secondary' style={{ fontSize: '12px' }}>Tu▼</div></div></Nav.Link> */}
-          <Dropdown  className='d-flex flex-column align-items-center pt-2'><img className='avatar' src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png' />
-            <Dropdown.Toggle className='p-0 text-secondary' id="dropdown-basic" variant='light' style={{ fontSize: '12px' }}>
-            Tu
+          <Dropdown className='d-flex flex-column align-items-center pt-2 pe-5'><img className='avatar' src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png' />
+            <Dropdown.Toggle className='p-0 text-secondary d-none d-md-block' id="dropdown-basic" variant='light' style={{ fontSize: '12px' }}>
+              Tu
             </Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
@@ -53,6 +53,21 @@ function MyNav() {
               <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
+          <Dropdown className='d-flex flex-column align-items-center pt-2 ps-3 pe-1 border-start'><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-grid-3x3-gap-fill" viewBox="0 0 16 16">
+            <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z" />
+          </svg>
+            <Dropdown.Toggle className='p-0 text-secondary d-none d-md-block' id="dropdown-basic" variant='light' style={{ fontSize: '12px' }}>
+              Per le aziende
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          <Nav.Link href="#offerta"><div className='d-flex flex-column'><div className='d-flex justify-content-center'><svg className='text-secondary' xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-dash-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0M6 9.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1z" />
+          </svg></div><div className='d-none d-md-block fontSize overF text-secondary'>Pubblica offerta di lavoro</div></div></Nav.Link>
 
 
           {/* <NavDropdown title={<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}><img className='avatar' src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png' /><span style={{ fontSize: '12px' }}>Tu</span> </div>} id="basic-nav-dropdown"

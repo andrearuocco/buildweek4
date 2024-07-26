@@ -14,7 +14,7 @@ function Jumbotron({ user }) {
                     <p>{user.name + ' ' + user.surname}</p>
                     <p>{user.title}</p>
                     <p>{user.area}</p>
-                    <div><Button >1</Button><Button >2</Button><Button >3</Button></div>
+                    <div><Button >Disponibile per</Button><Button >Aggiungi sezione profilo</Button><Button >Migliora profilo</Button></div>
                 </div>
                 <div className='d-flex align-items-center'>
                     <Image src="https://picsum.photos/40/40" />

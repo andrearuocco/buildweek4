@@ -9,3 +9,8 @@
 .bor-rad-ar {
     border-radius: 50%;
 }
+
+
+.ucFooter li{
+    list-style: none;
+}

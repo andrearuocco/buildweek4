@@ -16,7 +16,7 @@ const [profiles, setProfiles] = useState([])
                   },
               })
           const data = await response.json()
-          console.log(data)
+          //console.log(data)
           setProfiles(data.slice(300, 310))
       }
   useEffect(()=>{loadProfile()}, [])

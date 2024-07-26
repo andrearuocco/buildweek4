@@ -7,3 +7,6 @@
     color:#1966C2;
     text-decoration: underline;
 }
+.ucFooter li{
+    list-style: none;
+}

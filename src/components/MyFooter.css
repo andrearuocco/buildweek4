@@ -1,0 +1,9 @@
+.ucFooter a{
+    list-style: none;
+    color: gray;
+    text-decoration: none;
+}
+.ucFooter a:hover{
+    color:#1966C2;
+    text-decoration: underline;
+}

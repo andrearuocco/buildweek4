@@ -2,33 +2,33 @@ import './Jumbotron.css'
 import { Button, Container, Image } from 'react-bootstrap'
 
 
-function Jumbotron({ me }) {
+function Jumbotron({ user }) {
 
     return(<>
-        <Container className='h-ar p-0 bor-and'>
-            <Image src="https://picsum.photos/735/200" className='bor-and-t w-100' />
+        <Container className='p-0 bor-and'>
+            <Image src="https://picsum.photos/735/200" className='h-50 bor-and-t w-100' />
             <div className='position-relative'>
-                <Image src={me.image} className='position-absolute h-img-bw w-img-bw pa-ra' />   </div>
+                <Image src={user.image} className='position-absolute h-img-bw w-img-bw pa-ra' />   </div>
             <div className='d-flex justify-content-between'>
                 <div className='mt-4'>
-                    <p>{me.name + ' ' + me.surname}</p>
-                    <p>{me.title}</p>
-                    <p>{me.area}</p>
+                    <p>{user.name + ' ' + user.surname}</p>
+                    <p>{user.title}</p>
+                    <p>{user.area}</p>
                     <div><Button >1</Button><Button >2</Button><Button >3</Button></div>
                 </div>
                 <div className='d-flex align-items-center'>
                     <Image src="https://picsum.photos/40/40" />
-                    <p>{me.title}</p>
+                    <p>{user.title}</p>
                 </div>
             </div>
         </Container>
         <Container className='bor-and mt-3'>
             <h4>Attività</h4>
-            <p>{me.name} non ha pubblicato nessuna attività.</p>
+            <p>{user.name} non ha pubblicato nessuna attività.</p>
         </Container>
         <Container className='bor-and mt-3'>
             <h4>Bio</h4>
-            <p>{me.bio}</p>
+            <p>{user.bio}</p>
         </Container>
     </>)
 }

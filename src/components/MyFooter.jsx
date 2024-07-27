@@ -3,7 +3,7 @@ import './MyFooter.css'
 
 function MyFooter() {
     return (
-        <Container className="mt-5">
+        <Container className="mt-5 footer">
             <div className="d-flex ucFooter "> {/*  // uasata classe ucFooter li */}
                 <div>
                     <ul>

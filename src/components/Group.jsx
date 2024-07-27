@@ -7,6 +7,7 @@ function Group({experience, loadExperience, id}) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [file, setFile] = useState(null)
+  const [imagePreview, setImagePreview] = useState("https://picsum.photos/40/40");
     const [experienceEditing, setExperienceEditing] = useState(false)
     const editExperience = () => {
         setExperienceEditing(!experienceEditing)
@@ -78,7 +79,9 @@ function Group({experience, loadExperience, id}) {
   const handleShow = () => setShow(true);
   const [file, setFile] = useState(null)*/
   const fileChange = (ev => {
-    setFile(ev.target.files[0])
+    const selectedFile = ev.target.files[0]
+    setFile(selectedFile);
+    setImagePreview(URL.createObjectURL(selectedFile));
 
   })
 
@@ -109,13 +112,13 @@ if (response.ok) {
     return(<><ListGroup>
    
          
-        <ListGroup.Item><img src={file && file.name} />{experienceEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="role" onChange={experienceChange} value={formExperience.role} /> : <p onClick={handleShow}> experience.role</p> }</ListGroup.Item>
-        <ListGroup.Item>{experienceEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="company" onChange={experienceChange} value={formExperience.company} /> : experience.company}</ListGroup.Item>
-        <ListGroup.Item>{experienceEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="startDate" onChange={experienceChange} value={formExperience.startDate} /> : experience.startDate}</ListGroup.Item>
-        <ListGroup.Item>{experienceEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="endDate" onChange={experienceChange} value={formExperience.endDate} /> : experience.endDate}</ListGroup.Item>
-        <ListGroup.Item>{experienceEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="description" onChange={experienceChange} value={formExperience.description} /> : experience.description}</ListGroup.Item>
-        <ListGroup.Item>{experienceEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="area" onChange={experienceChange} value={formExperience.area} /> : experience.area}</ListGroup.Item>
-        <ListGroup.Item><i class="fa-solid fa-pen" onClick={() => { experienceEditing ? experienceEdit() : editExperience() }}></i> <i class="fa-solid fa-trash" onClick={deleteFinally}></i></ListGroup.Item>
+        <ListGroup.Item><img className="fotoExp" src={imagePreview} onClick={handleShow} />{experienceEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="role" onChange={experienceChange} value={formExperience.role} /> : <p > <span className="fw-bold">Ruolo: </span> {experience.role} </p>}</ListGroup.Item>
+        <ListGroup.Item>{experienceEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="company" onChange={experienceChange} value={formExperience.company} /> : <p > <span className="fw-bold">Company: </span> {experience.company} </p>}</ListGroup.Item>
+        <ListGroup.Item>{experienceEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="startDate" onChange={experienceChange} value={formExperience.startDate} /> : <p > <span className="fw-bold">Data di inizio: </span> {experience.startDate} </p>}</ListGroup.Item>
+        <ListGroup.Item>{experienceEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="endDate" onChange={experienceChange} value={formExperience.endDate} /> : <p > <span className="fw-bold">Data di fine: </span> {experience.endDate} </p>}</ListGroup.Item>
+        <ListGroup.Item>{experienceEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="description" onChange={experienceChange} value={formExperience.description} /> : <p > <span className="fw-bold">Descrizione: </span> {experience.description} </p>}</ListGroup.Item>
+        <ListGroup.Item>{experienceEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="area" onChange={experienceChange} value={formExperience.area} /> : <p > <span className="fw-bold">Area: </span> {experience.area} </p>}</ListGroup.Item>
+        <ListGroup.Item className="d-flex justify-content-end"><div className="pt-2"><i class="fa-solid fa-pen pe-2" onClick={() => { experienceEditing ? experienceEdit() : editExperience() }}></i> <i class="fa-solid fa-trash" onClick={deleteFinally}></i></div></ListGroup.Item>
         {alertTwo && 
     <div className="modal show" style={{ display: 'block', position: 'initial' }}>
         <Modal.Dialog>

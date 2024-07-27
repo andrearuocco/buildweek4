@@ -71,28 +71,28 @@ function JumboMe({ user, loadMe }) {
     setformValue({ ...formValue, [ev.target.name]: ev.target.value })
   })
   return (<>
-    <Container className='p-0 bor-and'>
+    <Container className='p-0 pb-4 bor-and mt-4 bg-white'>
       <Image src="https://picsum.photos/735/200" className='h-50 bor-and-t-me w-100' />
       <div className='position-relative'>
         <Image src={file === null ? user.image : file.name} className='position-absolute h-img-bw-me w-img-bw-me pa-ra-me' onClick={handleShow} />   </div>
-      <div className='d-flex justify-content-between'>
-        <div className='mt-4'>
+      <div className='d-flex justify-content-between ps-3'>
+        <div className='mt-4 d-flex flex-column'>
           <p>{user.name + ' ' + user.surname}</p><i onClick={() => { isEditing ? handleEdit() : editForm() }} class="fa-solid fa-pen-to-square"></i>
-          {isEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="title" onChange={handleChange} value={formValue.title} /> : user.title}
-          {isEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="area" onChange={handleChange} value={formValue.area} /> : user.area}
-          <div><Button >1</Button><Button >2</Button><Button >3</Button></div>
+          <div>{isEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="title" onChange={handleChange} value={formValue.title} /> : user.title}
+          </div><div>{isEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="area" onChange={handleChange} value={formValue.area} /> : user.area}</div>
+          <div><Button className='me-1' >Collegati</Button><Button className='me-1 text-primary' variant="outline-primary" >+ Segui</Button><Button variant="outline-secondary" >Altro</Button></div>
         </div>
-        <div className='d-flex align-items-center'>
-          <Image src="https://picsum.photos/40/40" />
+        <div className='d-flex align-items-center pe-3 '>
+          <Image className='b-rad' src="https://picsum.photos/40/40" />
           {isEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="title" onChange={handleChange} value={formValue.title} /> : user.title}
         </div>
       </div>
     </Container>
-    <Container className='bor-and-me mt-3'>
+    <Container className='bor-and-me mt-3 bg-white py-3'>
       <h4>Attività</h4>
       <p>{user.name} non ha pubblicato nessuna attività.</p>
     </Container>
-    <Container className='bor-and-me mt-3'>
+    <Container className='bor-and-me mt-3 bg-white py-3'>
       <h4>Bio</h4>
       {isEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="bio" onChange={handleChange} value={formValue.bio} /> : user.bio}
     </Container>

@@ -24,7 +24,7 @@ function ExperienceMe({ id, user }) {
         
     }
     useEffect(()=>{loadExperience()}, [id])
-    return(<Container className=''><h4>Esperienze</h4>{experiences.map(experience => <Group key={experience} experience={experience} id={id} loadExperience={loadExperience}/>
+    return(<Container className='bor-and-me mt-3 bg-white py-3'><h4>Esperienze</h4>{experiences.map(experience => <Group key={experience} experience={experience} id={id} loadExperience={loadExperience}/>
        /*  <ListGroup>
             <ListGroup.Item>{experience.role}</ListGroup.Item>
             <ListGroup.Item>{experience.company}</ListGroup.Item>

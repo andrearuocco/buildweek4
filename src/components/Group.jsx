@@ -101,14 +101,15 @@ console.log(file)
 if (response.ok) {
   alert("Nuova foto caricata.")
   handleClose()
-  setFile(file)
+  setFile(null)
+  
   }
 }
       
     return(<><ListGroup>
    
          
-        <ListGroup.Item><img src={file === null ? 'https://picsum.photos/40/40' : file.name} onClick={handleShow}/>{experienceEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="role" onChange={experienceChange} value={formExperience.role} /> : experience.role}</ListGroup.Item>
+        <ListGroup.Item><img src={file && file.name} />{experienceEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="role" onChange={experienceChange} value={formExperience.role} /> : <p onClick={handleShow}> experience.role</p> }</ListGroup.Item>
         <ListGroup.Item>{experienceEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="company" onChange={experienceChange} value={formExperience.company} /> : experience.company}</ListGroup.Item>
         <ListGroup.Item>{experienceEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="startDate" onChange={experienceChange} value={formExperience.startDate} /> : experience.startDate}</ListGroup.Item>
         <ListGroup.Item>{experienceEditing ? <Form.Control as="textarea" className='mb-3 w-100' aria-label="With textarea" name="endDate" onChange={experienceChange} value={formExperience.endDate} /> : experience.endDate}</ListGroup.Item>

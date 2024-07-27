@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Form, ListGroup, Modal, Button, ListGroupItem } from "react-bootstrap"
 
-function Group({experience, loadExperience, id, user}) {
+function Group({experience, loadExperience, id}) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -88,7 +88,7 @@ function Group({experience, loadExperience, id, user}) {
     const formData = new FormData();
     formData.append('experience', file);
 
-    const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experience/${experience._id}/picture`,
+    const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences/${experience._id}/picture`,
       {
         headers: {
           "Authorization": "Bearer " + token,
@@ -97,11 +97,12 @@ function Group({experience, loadExperience, id, user}) {
         method: 'POST',
         body: formData
 } ) 
+console.log(file)
 if (response.ok) {
   alert("Nuova foto caricata.")
   handleClose()
-  setFile(null)
-  loadExperience()}
+  setFile(file)
+  }
 }
       
     return(<><ListGroup>

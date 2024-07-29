@@ -73,11 +73,7 @@ function Group({experience, loadExperience, id}) {
         
        
       };
-      /*   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  const [file, setFile] = useState(null)*/
   const fileChange = (ev => {
     const selectedFile = ev.target.files[0]
     setFile(selectedFile);

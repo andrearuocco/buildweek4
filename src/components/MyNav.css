@@ -42,3 +42,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.left-8 {
+    left: 8rem !important;
+    top: 2.7rem !important;
+}

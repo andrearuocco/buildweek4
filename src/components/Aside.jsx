@@ -3,11 +3,11 @@ import { Image, Button } from 'react-bootstrap/';
 import { Link } from 'react-router-dom';
 import './Aside.css';
 
-function Aside({profiles, loadProfile}) {
+function Aside({profiles}) {
     
 
-    
-    useEffect(() => { loadProfile() }, [])
+    profiles = profiles.slice(300, 315)
+   
 
     return(
         <div className="mt-4 bor-and mt-4 bg-white">

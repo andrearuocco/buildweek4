@@ -7,9 +7,22 @@ import { Image } from 'react-bootstrap';
 import './MyNav.css'
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
-function MyNav() {
+function MyNav({profiles}) {
+  const [search, setSearch] = useState('')
+    
+  const [resultSearch, setresultSearch] = useState([])
+  
+  const handleSearch = (event) => {
+      setSearch(event.target.value)
+      const resultProf = profiles.filter(profile => {
+        return profile.name.toLocaleLowerCase().includes(event.target.value.toLocaleLowerCase())
+      })
+      setresultSearch(resultProf)
+      console.log(resultProf)
 
+    }
 
   return (
 
@@ -20,14 +33,29 @@ function MyNav() {
         {/* <Navbar.Collapse id="basic-navbar-nav"> */}
         <Nav className='me-5'><Form className="d-flex formWidth">
           <Form.Control
-            type="search"
+            aria-describedby="basic-addon1"
             placeholder="Cerca"
             className="me-5 bg-secondary-subtle"
             aria-label="Search"
+            onChange={handleSearch}
           />
-        </Form></Nav>
+        </Form>
+        {search && (
+              <Dropdown.Menu show className="position-absolute left-8">
+                {resultSearch.length > 0 ? (
+                  resultSearch.map((profile) => (
+                    <Dropdown.Item key={profile.id} as={Link} to={`/people/${profile._id}`} >
+                      {profile.name}  {profile.title}
+                    </Dropdown.Item>
+                  ))
+                ) : (
+                  <Dropdown.Item disabled>Nessun risultato</Dropdown.Item>
+                )}
+              </Dropdown.Menu>
+            )}
+        </Nav>
         <Nav className="me-auto text-secondary">
-          <Nav.Link className='ps-5 pe-5' href="#home"as={Link} to="/"><div className='d-flex flex-column'><div className='d-flex justify-content-center'><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+          <Nav.Link className='ps-5 pe-5' href="#home"><div className='d-flex flex-column'><div className='d-flex justify-content-center'><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
             <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5" />
           </svg></div><div className='d-none d-md-block fontSize'>Home</div></div></Nav.Link>
           <Nav.Link className='pe-5' href="#rete"><div className='d-flex flex-column'><div className='d-flex justify-content-center'><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
@@ -91,4 +119,5 @@ function MyNav() {
 }
 
 export default MyNav;
+
 

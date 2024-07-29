@@ -3,23 +3,11 @@ import { Image, Button } from 'react-bootstrap/';
 import { Link } from 'react-router-dom';
 import './Aside.css';
 
-function Aside() {
-const [profiles, setProfiles] = useState([])
-  const API_URL = 'https://striveschool-api.herokuapp.com/api/profile/'
-  const token = process.env.REACT_APP_API_STRIVE_LINKEDIN
-      const loadProfile = async () => {
-          const response = await fetch(API_URL,
-              {
-                  headers: {
-                      "Authorization": "Bearer " + token,
-                   
-                  },
-              })
-          const data = await response.json()
-          //console.log(data)
-          setProfiles(data.slice(300, 310))
-      }
-  useEffect(()=>{loadProfile()}, [])
+function Aside({profiles, loadProfile}) {
+    
+
+    
+    useEffect(() => { loadProfile() }, [])
 
     return(
         <div className="mt-4 bor-and mt-4 bg-white">
